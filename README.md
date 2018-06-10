@@ -26,3 +26,12 @@ build.sbtが赤い→Shift2回→[Reflesh ...]
 ## Scala.js
 まだ公式のチュートリアルでHello, Worldやっただけ
 https://www.scala-js.org/tutorial/basic/
+
+### 以下間違っている可能性大のメモ書き
+
+#### なぜ 外部のJavascriptライブラリを使うために，`build.sbt`に`libraryDependencies` と `jsDependencies` の両方が必要か
+
+* `libraryDependencies`への指定
+    * → Scala.jsから型定義を使うため(jar, sourceから獲得する)
+* `jsDependencies`への指定
+    * → Javascriptにクラスロードの仕組みがなく，jarだけだと実行できないため
